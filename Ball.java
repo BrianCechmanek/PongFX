@@ -19,8 +19,16 @@ public class Ball extends Circle {
     
     public void move(Circle shape) {
     	    final Timeline loop = new Timeline(new KeyFrame(Duration.millis(10), new EventHandler<ActionEvent>() {
-    	    	    double deltaX = 4 * MainScreen.level;
-    	        double deltaY = 2 * MainScreen.level;
+    	    	    int deltaX = 4 * MainScreen.level;
+    	    	    int generateUpDown() {
+    	    	    	    double temp = Math.random();
+    	    	    	    if (temp<0.5) {
+    	    	    	    	    return -1;
+    	    	    	    } else {
+    	    	    	    	    return 1;
+    	    	    	    }
+    	    	    }
+    	        int deltaY = generateUpDown() * MainScreen.level;
     	        
 			@Override
 			public void handle(ActionEvent event) {
