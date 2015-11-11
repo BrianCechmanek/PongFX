@@ -58,7 +58,6 @@ public class MainScreen extends Application {
 					Paddle.moveDown(playerPaddle);
 				} else {
 					System.out.println("KeyCode is " + event.getCode()  + " but if/else isn't catching codes correctly.");
-					System.out.println("KP_UP code is: " + KeyCode.KP_UP);
 				}
 		    }		
 		});			
