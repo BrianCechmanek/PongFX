@@ -33,12 +33,14 @@ public class Ball extends Circle {
 			@Override
 			public void handle(ActionEvent event) {
 		        final Bounds bounds = MainScreen.canvas.getBoundsInLocal();
-		        final boolean atRIghtBorder = shape.getLayoutX() + shape.getRadius() >= (bounds.getMaxX());
-		        final boolean atLeftBorder = shape.getLayoutX() - shape.getRadius() <= (bounds.getMinX());
+		        final boolean atRIghtBorder = (shape.getLayoutX() + shape.getRadius()) >= (bounds.getMaxX());
+		        final boolean atLeftBorder = (shape.getLayoutX() - shape.getRadius()) <= (bounds.getMinX());
 		        final boolean atTopBorder = shape.getLayoutY() <= (bounds.getMinY() + shape.getRadius());
 		        final boolean atBottomBorder = shape.getLayoutY() >= (bounds.getMaxY() - shape.getRadius());
 		        
-                if (atRIghtBorder) {
+                detectCollision(shape);
+		        
+		        if (atRIghtBorder) {
                 	deltaX *= -1;
                 	shape.setLayoutX(shape.getLayoutX() - shape.getRadius());
                 }
@@ -58,7 +60,7 @@ public class Ball extends Circle {
                 shape.setLayoutX(shape.getLayoutX() + deltaX);
                 shape.setLayoutY(shape.getLayoutY() + deltaY);	
                 
-                detectCollision(shape);
+
 			   }
 
 		    public void detectCollision(Circle shape) {

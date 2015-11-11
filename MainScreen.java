@@ -7,7 +7,6 @@ import javafx.stage.*;
 import javafx.scene.*;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 
@@ -52,8 +51,7 @@ public class MainScreen extends Application {
 			public void handle(KeyEvent event) {
 				if ((event.getCode() == KeyCode.UP) && (playerPaddle.getLayoutY() > 0))  {
 					Paddle.moveUp(playerPaddle);
-				}
-				else if ((event.getCode() == KeyCode.DOWN) && ((playerPaddle.getLayoutY() + playerPaddle.getHeight()) 
+				} else if ((event.getCode() == KeyCode.DOWN) && ((playerPaddle.getLayoutY() + playerPaddle.getHeight()) 
 						< MainScreen.canvas.getHeight()))  {
 					Paddle.moveDown(playerPaddle);
 				} else {
