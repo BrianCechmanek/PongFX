@@ -50,15 +50,15 @@ public class MainScreen extends Application {
 		mainScene.addEventHandler(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
 			@Override
 			public void handle(KeyEvent event) {
-				if ((event.getCode() == KeyCode.KP_UP) && (playerPaddle.getLayoutY() > 0))  {
-					System.out.println("KeyCode is" + event.getCode());
+				if ((event.getCode() == KeyCode.UP) && (playerPaddle.getLayoutY() > 0))  {
 					Paddle.moveUp(playerPaddle);
 				}
-				else if ((event.getCode() == KeyCode.KP_DOWN) && (playerPaddle.getLayoutY() < MainScreen.canvas.getHeight()))  {
-					System.out.println("KeyCode is" + event.getCode());
+				else if ((event.getCode() == KeyCode.DOWN) && ((playerPaddle.getLayoutY() + playerPaddle.getHeight()) 
+						< MainScreen.canvas.getHeight()))  {
 					Paddle.moveDown(playerPaddle);
 				} else {
 					System.out.println("KeyCode is " + event.getCode()  + " but if/else isn't catching codes correctly.");
+					System.out.println("KP_UP code is: " + KeyCode.KP_UP);
 				}
 		    }		
 		});			

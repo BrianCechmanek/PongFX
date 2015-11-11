@@ -28,16 +28,19 @@ public class Paddle extends Rectangle{
 	}
 	
 	public static void moveUp(Rectangle paddle) {
-		paddle.setLayoutY(paddle.getLayoutY() - 20);
+		paddle.setLayoutY(paddle.getLayoutY() - (MainScreen.canvas.getHeight()/25));
 	}
 	
 	public static void moveDown(Rectangle paddle) {
-		paddle.setLayoutY(paddle.getLayoutY() +  20);
+		paddle.setLayoutY(paddle.getLayoutY() + (MainScreen.canvas.getHeight()/25));
 	}
 
 	
 } //close class paddle
 
+
+// attempts at adding EventHandler to the paddle class failed miserably. But Some day I 'd 
+// like to move it over here instead. so keeping the code below.
 /*
 MainScreen.canvas.addEventHandler(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
 	@Override
